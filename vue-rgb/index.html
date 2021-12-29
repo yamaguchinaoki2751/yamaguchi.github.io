@@ -16,7 +16,7 @@
     <input v-model="newColor" type="text" placeholder="00bbdd">
     <div class="new-color" v-if="newColor != '' ">
       <div class="color-sample" :style="{background: '#' + newColor}"></div>
-      <p class="copy-value" :style="{color: 'rgb' + '(' + rgbValue + ')'}">rgb({{rgbValue}})</p>
+      <p class="copy-value">rgb({{rgbValue}})</p>
     </div><!-- .new-color -->
   </div><!-- #app -->
 </div>
