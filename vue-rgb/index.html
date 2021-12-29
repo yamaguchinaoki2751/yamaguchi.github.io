@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>カラーコードをRGB値に変換</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+  <h1>カラーコード変換</h1>
+  <div id="app">
+    <span class="hash">#</span>
+    <input v-model="newColor" type="text" placeholder="00bbdd">
+    <div class="new-color" v-if="newColor != '' ">
+      <div class="color-sample" :style="{background: '#' + newColor}"></div>
+      <p class="copy-value" :style="{color: 'rgb' + '(' + rgbValue + ')'}">rgb({{rgbValue}})</p>
+    </div><!-- .new-color -->
+  </div><!-- #app -->
+</div>
+<!-- js -->
+<script src="js/vue.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
