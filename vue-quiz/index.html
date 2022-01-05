@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3択クイズ</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <p>{{count}}点/{{fullScore}}点中<span>（各20点）</span></p>
+    <div v-for="(item, questionIndex) in questions" v-bind:key=questionIndex class="question-wrapper">
+      <p class="question-title">{{item.question}}</p>
+      <ul>
+        <li v-for="(selection, selectIndex) in item.selections" v-bind:key=selectIndex @click="clickSelection(questionIndex, selectIndex)">{{selection.choice}}</li>
+      </ul>
+      <p v-if="answerExistList[questionIndex]" class="question-answer">
+        {{ getJudgeText(questionIndex) }}
+       </p>
+    </div>
+  </div>
+
+  <script src="js/vue.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
